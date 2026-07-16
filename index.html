@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayeeza Khan | DevOps CV</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Outfit (for headings) & Plus Jakarta Sans (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;750&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0B0F17;
+        }
+        .heading-font {
+            font-family: 'Outfit', sans-serif;
+        }
+        /* Custom Accordion Transition */
+        .cv-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+        .cv-content.open {
+            max-height: 500px; /* Adjust based on content size */
+            opacity: 1;
+        }
+        /* Arrow Rotation */
+        .arrow-icon {
+            transition: transform 0.3s ease;
+        }
+        .arrow-icon.rotated {
+            transform: rotate(185deg);
+        }
+    </style>
+</head>
+<body class="text-slate-300 min-h-screen py-12 px-4 flex flex-col justify-between selection:bg-indigo-500/30">
+
+    <!-- CV Container (Styled like an A4 Sheet but digital/dark) -->
+    <main class="max-w-3xl w-full mx-auto bg-[#111827] border border-slate-800/80 rounded-2xl p-8 md:p-12 shadow-2xl space-y-8">
+        
+        <!-- CV HEADER (Static & Professional) -->
+        <header class="border-b border-slate-800 pb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div>
+                <h1 class="heading-font text-3xl md:text-4xl font-bold tracking-tight text-white mb-2">Ayeeza Khan</h1>
+                <p class="heading-font text-indigo-400 font-medium text-lg tracking-wide uppercase text-sm">DevOps Engineer</p>
+                <p class="text-xs text-slate-500 mt-1">Specializing in Cloud Infrastructure & Automation</p>
+            </div>
+            <!-- Quick Contact info right at the top -->
+            <div class="text-left md:text-right space-y-1 text-sm text-slate-400">
+                <p class="flex items-center md:justify-end gap-2">📍 Lahore, Pakistan</p>
+                <p class="flex items-center md:justify-end gap-2">📧 <a href="mailto:ayeezakhan55@gmail.com" class="hover:text-indigo-400 transition">ayeezakhan55@gmail.com</a></p>
+                <p class="flex items-center md:justify-end gap-2">📞 <a href="tel:03294236137" class="hover:text-indigo-400 transition">0329-4236137</a></p>
+            </div>
+        </header>
+
+        <!-- INTERACTIVE CV SECTIONS -->
+        <div class="space-y-4">
+
+            <!-- SECTION 1: PROFESSIONAL SUMMARY -->
+            <div class="border-b border-slate-800/50 pb-4">
+                <button onclick="toggleSection('summary')" class="w-full flex justify-between items-center py-3 text-left focus:outline-none group">
+                    <h2 class="heading-font text-xl font-semibold text-white group-hover:text-indigo-400 transition flex items-center gap-3">
+                        <span class="text-indigo-500 text-sm">01/</span> Professional Profile
+                    </h2>
+                    <svg id="arrow-summary" class="arrow-icon w-5 h-5 text-slate-500 group-hover:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="content-summary" class="cv-content open"> <!-- Left open by default for recruiter first impact -->
+                    <p class="text-slate-400 text-sm md:text-base leading-relaxed pt-2">
+                        Dedicated DevOps Engineer currently pursuing a BS in Accounting & Taxation at Punjab University. By combining strong financial analytics (giving me an edge in Cloud FinOps and budget tracking) with technical engineering, I build highly optimized, secure, and cost-effective deployment infrastructures.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SECTION 2: SKILLS -->
+            <div class="border-b border-slate-800/50 pb-4">
+                <button onclick="toggleSection('skills')" class="w-full flex justify-between items-center py-3 text-left focus:outline-none group">
+                    <h2 class="heading-font text-xl font-semibold text-white group-hover:text-indigo-400 transition flex items-center gap-3">
+                        <span class="text-indigo-500 text-sm">02/</span> Technical Skills
+                    </h2>
+                    <svg id="arrow-skills" class="arrow-icon w-5 h-5 text-slate-500 group-hover:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="content-skills" class="cv-content">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-3 text-sm">
+                        <div class="space-y-2">
+                            <h4 class="text-indigo-400 font-semibold uppercase tracking-wider text-xs">Cloud & Infrastructure</h4>
+                            <p class="text-slate-300">AWS (EC2, S3, IAM, VPC), Terraform (IaC)</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-indigo-400 font-semibold uppercase tracking-wider text-xs">Containers & OS</h4>
+                            <p class="text-slate-300">Docker, Linux (Ubuntu/Debian), Bash Scripting</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-indigo-400 font-semibold uppercase tracking-wider text-xs">Collaboration</h4>
+                            <p class="text-slate-300">Git & GitHub, Version Control</p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="text-indigo-400 font-semibold uppercase tracking-wider text-xs">Foundations</h4>
+                            <p class="text-slate-300">Computer Networking, Routing, Protocol Analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: WORK EXPERIENCE -->
+            <div class="border-b border-slate-800/50 pb-4">
+                <button onclick="toggleSection('experience')" class="w-full flex justify-between items-center py-3 text-left focus:outline-none group">
+                    <h2 class="heading-font text-xl font-semibold text-white group-hover:text-indigo-400 transition flex items-center gap-3">
+                        <span class="text-indigo-500 text-sm">03/</span> Work History
+                    </h2>
+                    <svg id="arrow-experience" class="arrow-icon w-5 h-5 text-slate-500 group-hover:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="content-experience" class="cv-content">
+                    <div class="pt-4 space-y-2">
+                        <div class="flex justify-between items-start flex-wrap gap-2">
+                            <h3 class="font-bold text-white text-base md:text-lg">DevOps Intern</h3>
+                            <span class="text-xs bg-indigo-950 text-indigo-300 px-2.5 py-1 rounded-full font-medium">Active Internship</span>
+                        </div>
+                        <p class="text-sm text-indigo-400 font-medium">DafiLabs — Lahore, Pakistan</p>
+                        <ul class="list-disc list-inside text-slate-400 space-y-2 text-sm mt-3 leading-relaxed">
+                            <li>Managing container deployments using <strong class="text-slate-200">Docker</strong>.</li>
+                            <li>Automating infrastructure provisioning with <strong class="text-slate-200">Terraform</strong>.</li>
+                            <li>Deploying and configuring essential core cloud services on <strong class="text-slate-200">AWS</strong>.</li>
+                            <li>Developing custom automation scripts on <strong class="text-slate-200">Linux systems</strong> to optimize server health and deployments.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: EDUCATION -->
+            <div class="border-b border-slate-800/50 pb-4">
+                <button onclick="toggleSection('education')" class="w-full flex justify-between items-center py-3 text-left focus:outline-none group">
+                    <h2 class="heading-font text-xl font-semibold text-white group-hover:text-indigo-400 transition flex items-center gap-3">
+                        <span class="text-indigo-500 text-sm">04/</span> Education
+                    </h2>
+                    <svg id="arrow-education" class="arrow-icon w-5 h-5 text-slate-500 group-hover:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="content-education" class="cv-content">
+                    <div class="pt-4 space-y-1">
+                        <div class="flex justify-between items-baseline flex-wrap gap-2">
+                            <h3 class="font-bold text-white">Punjab University</h3>
+                            <span class="text-xs text-slate-500">2024 — 2028</span>
+                        </div>
+                        <p class="text-sm text-indigo-400">BS Accounting & Taxation</p>
+                        <p class="text-xs text-slate-400 mt-2">
+                            *Utilizing analytical and financial coursework to develop expertise in **FinOps** (Cloud Cost Optimization).*
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Footer -->
+    <footer class="text-center py-8 text-xs text-slate-600 tracking-wide">
+        &copy; 2026 Ayeeza Khan • Designed for recruitment performance.
+    </footer>
+
+    <!-- Toggle Animation Script -->
+    <script>
+        // Set summary active by default on load
+        document.getElementById('arrow-summary').classList.add('rotated');
+
+        function toggleSection(id) {
+            const content = document.getElementById('content-' + id);
+            const arrow = document.getElementById('arrow-' + id);
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                arrow.classList.remove('rotated');
+            } else {
+                content.classList.add('open');
+                arrow.classList.add('rotated');
+            }
+        }
+    </script>
+</body>
+</html>
